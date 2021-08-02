@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+/*============= Variables =============*/
+:root {
+    --animation-timing: 3s;
+    --main-color: #fda71d;
+}
+
+/*============= Base settings =============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   
+    height: 100vh;
+    background: #050801;
+    font-family: 'Realway', sans-serif;
+    font-weight: 700;
+}
+
+.box {
+    margin-top: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/*============= Button form =============*/
+.neon-btn {
+    position: relative;
+    display: inline-block;
+
+    padding: 25px 30px;
+    margin: 50px;
+
+    color: var(--main-color);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    overflow: hidden;
+
+    transition: .5s;
+
+}
+
+/*============= Glowing neon =============*/
+.neon-btn:hover {
+    background: var(--main-color);
+    color: #fff;
+    box-shadow: 0 0 5px var(--main-color), 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 200px var(--main-color);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.neon-btn:nth-child(1) {
+    filter: hue-rotate(270deg);
+}
+
+.neon-btn:nth-child(2) {
+    filter: hue-rotate(110deg);
+}
+
+.neon-btn .frame-comet{
+    position: absolute;
+    display: block;
+}
+
+.neon-btn .frame-comet:nth-child(1) {
+    width: 100%;
+    height: 2px;
+
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(90deg, transparent, var(--main-color));
+    animation: frameCometTop var(--animation-timing) linear infinite;
+}
+
+@keyframes frameCometTop {
+    0% {left: -100%;}
+    50%,
+    100% {left: 100%;}
+}
+
+.neon-btn :nth-child(2){
+    width: 2px;
+    height: 100%;
+
+    top: -100%;
+    right: 0;
+
+    background: linear-gradient(180deg, transparent, var(--main-color));
+    animation: frameCometRight var(--animation-timing) linear infinite;
+    animation-delay: calc(var(--animation-timing)/4*1);
+}
+
+@keyframes frameCometRight {
+    0% {top: -100%;}
+    50%,
+    100% {top: 100%;}
+}
+
+.neon-btn .frame-comet:nth-child(3) {
+    height: 2px;
+    width: 100%;
+
+    bottom: 0;
+    right: 0;
+
+    background: linear-gradient(270deg, transparent, var(--main-color));
+    animation: frameComet3 var(--animation-timing) linear infinite;
+    animation-delay: calc(var(--animation-timing)/4*2);
+}
+
+@keyframes frameComet3 {
+    0% {right: -100%;}
+    50%,
+    100% {right: 100%;}
+}
+
+.neon-btn .frame-comet:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--main-color));
+    animation: frameCometLeft var(--animation-timing) linear infinite;
+    animation-delay: calc(var(--animation-timing)/4*3);
+}
+
+@keyframes frameCometLeft {
+    0% {bottom: -100%;}
+    50%,
+    100% {bottom: 100%;}
+}
+
+
